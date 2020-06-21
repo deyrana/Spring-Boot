@@ -1,1 +1,10 @@
-echo "Hello Jenkins from jenkinsfile inside Pipeline"
+pipeline {
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn compile'
+                echo 'compiled successfully'
+            }
+        }
+    }
+}
