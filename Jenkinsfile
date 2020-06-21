@@ -1,10 +1,8 @@
-pipeline {
-    stages {
-        stage('Build') {
-            steps {
-                sh 'mvn compile'
-                echo 'compiled successfully'
-            }
-        }
-    }
+node{
+	stage('SCM Checkout'){
+		git 'https://github.com/deyrana/Spring-Boot'
+	}
+	stage('Compile-Package'){
+		sh 'mvn package'
+	}
 }
