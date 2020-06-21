@@ -1,0 +1,1 @@
+echo "Hello Jenkins from jenkinsfile inside Pipeline"
