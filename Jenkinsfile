@@ -8,12 +8,11 @@ pipeline{
 		}
 		stage('Compile-Package'){
 			steps{
-				// def mvnHome = tool name: 'maven-3', type: 'maven'
-				// sh "${mvnHome}/bin/mvn -version"
-				// sh "${mvnHome}/bin/mvn clean install"
-				
-				mvn -version
-				mvn clean install
+				step {
+					def mvnHome = tool name: 'maven-3', type: 'maven'
+					sh "${mvnHome}/bin/mvn -version"
+					sh "${mvnHome}/bin/mvn clean install"
+				}
 			}
 		}
 	}
