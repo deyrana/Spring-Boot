@@ -10,8 +10,6 @@ pipeline{
 		stage('Compile-Package'){
 			steps{
 				def mvnHome = tool name: 'maven-3', type: 'maven'
-			}
-			steps{
 				sh "${mvnHome}/bin/mvn -version"
 				sh "${mvnHome}/bin/mvn clean install"
 			}
